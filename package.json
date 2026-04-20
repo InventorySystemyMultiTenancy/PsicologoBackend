@@ -1,0 +1,11 @@
+{
+  "name": "psicologo-backend-monorepo-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm --prefix backend install",
+    "build": "npm --prefix backend run build",
+    "start": "npm --prefix backend start",
+    "dev": "npm --prefix backend run dev"
+  }
+}

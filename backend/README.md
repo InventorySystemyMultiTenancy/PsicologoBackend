@@ -250,14 +250,20 @@ Resposta de sucesso esperada:
 ## Deploy no Render
 
 ### 1) Criar Web Service
-- Conecte o repositorio com a pasta `backend`.
+- Conecte o repositorio.
 - Runtime: Node
+
+Configuracao recomendada:
+- Root Directory: `backend`
+
+Alternativa (se Root Directory ficar vazio na raiz do repositorio):
+- O projeto raiz ja possui scripts que encaminham para `backend`, entao tambem funciona.
 
 ### 2) Build e Start command
 - Build Command:
 
 ```bash
-npm install
+npm run build
 ```
 
 - Start Command:
