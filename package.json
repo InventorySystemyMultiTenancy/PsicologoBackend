@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "postinstall": "npm --prefix backend install",
-    "build": "npm --prefix backend run build",
+    "build": "npm --prefix backend ci --omit=dev && npm --prefix backend run build",
     "start": "npm --prefix backend start",
     "dev": "npm --prefix backend run dev"
   }
