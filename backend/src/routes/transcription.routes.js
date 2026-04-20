@@ -17,12 +17,15 @@ const storage = multer.diskStorage({
 
 const allowedTypes = [
   'audio/mpeg',
+  'audio/mp3',
+  'audio/mpga',
   'audio/wav',
   'audio/webm',
   'audio/mp4',
   'audio/x-m4a',
   'audio/ogg',
   'audio/aac',
+  'video/mp4',
   'application/octet-stream'
 ];
 
