@@ -34,6 +34,10 @@ async function uploadAudio(filePath) {
 async function requestTranscription(audioUrl) {
   const payload = {
     audio_url: audioUrl,
+    language_detection: env.assemblyAiLanguageDetection,
+    ...(env.assemblyAiSpeechModels.length
+      ? { speech_models: env.assemblyAiSpeechModels }
+      : {}),
     summarization: true,
     summary_model: 'informative',
     summary_type: 'bullets'
