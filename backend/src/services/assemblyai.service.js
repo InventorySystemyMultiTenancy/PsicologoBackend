@@ -1,13 +1,27 @@
 const axios = require('axios');
 const fs = require('fs');
+const http = require('http');
+const https = require('https');
 const env = require('../config/env');
 const AppError = require('../utils/appError');
+
+const httpAgent = new http.Agent({
+  keepAlive: false,
+  maxSockets: 20
+});
+
+const httpsAgent = new https.Agent({
+  keepAlive: false,
+  maxSockets: 20
+});
 
 const client = axios.create({
   baseURL: env.assemblyAiBaseUrl,
   headers: {
     authorization: env.assemblyAiApiKey
   },
+  httpAgent,
+  httpsAgent,
   timeout: 120000
 });
 
