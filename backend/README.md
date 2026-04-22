@@ -112,6 +112,7 @@ Observacoes:
 - Configure `CORS_ORIGIN` com os dominios do frontend (Vercel).
 - Para analise pos-transcricao via n8n, configure `N8N_ANALYSIS_WEBHOOK_URL`.
 - Em producao, use URL de webhook publicada no n8n. URLs com `/webhook-test/` funcionam apenas em modo de teste.
+- Configure `N8N_ANALYSIS_TIMEOUT_MS=0` para aguardar a resposta do n8n sem timeout do backend.
 
 ## Endpoints obrigatorios
 

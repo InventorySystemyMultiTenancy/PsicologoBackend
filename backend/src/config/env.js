@@ -14,6 +14,12 @@ function parseCsv(value) {
     .filter(Boolean);
 }
 
+function parseNumber(value, fallback) {
+  if (value === undefined || value === null || value === '') return fallback;
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric : fallback;
+}
+
 const env = {
   port: Number(process.env.PORT) || 3000,
   nodeEnv: process.env.NODE_ENV || 'development',
@@ -32,7 +38,7 @@ const env = {
     process.env.ASSEMBLYAI_SPEECH_MODELS || 'universal-3-pro,universal-2'
   ),
   n8nAnalysisWebhookUrl: process.env.N8N_ANALYSIS_WEBHOOK_URL || '',
-  n8nAnalysisTimeoutMs: Number(process.env.N8N_ANALYSIS_TIMEOUT_MS) || 20000
+  n8nAnalysisTimeoutMs: parseNumber(process.env.N8N_ANALYSIS_TIMEOUT_MS, 0)
 };
 
 module.exports = env;
