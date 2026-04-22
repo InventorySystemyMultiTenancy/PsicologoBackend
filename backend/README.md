@@ -110,6 +110,8 @@ ASSEMBLYAI_BASE_URL=https://api.assemblyai.com/v2
 Observacoes:
 - Nunca exponha `ASSEMBLYAI_API_KEY` no frontend.
 - Configure `CORS_ORIGIN` com os dominios do frontend (Vercel).
+- Para analise pos-transcricao via n8n, configure `N8N_ANALYSIS_WEBHOOK_URL`.
+- Em producao, use URL de webhook publicada no n8n. URLs com `/webhook-test/` funcionam apenas em modo de teste.
 
 ## Endpoints obrigatorios
 
@@ -147,6 +149,7 @@ Observacoes:
 
 ### Transcricao
 - POST `/transcribe` (multipart/form-data com campo `audio`)
+  - Retorna `text`, `summary` e, quando configurado, `analysis` com a resposta do n8n.
 
 ## Regras de negocio implementadas
 

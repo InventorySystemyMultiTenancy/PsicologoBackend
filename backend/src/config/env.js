@@ -30,7 +30,9 @@ const env = {
   ),
   assemblyAiSpeechModels: parseCsv(
     process.env.ASSEMBLYAI_SPEECH_MODELS || 'universal-3-pro,universal-2'
-  )
+  ),
+  n8nAnalysisWebhookUrl: process.env.N8N_ANALYSIS_WEBHOOK_URL || '',
+  n8nAnalysisTimeoutMs: Number(process.env.N8N_ANALYSIS_TIMEOUT_MS) || 20000
 };
 
 module.exports = env;
