@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 const allowedTypes = [
   'audio/mpeg',
   'audio/mp3',
+  'audio/mp3.mpeg',
   'audio/mpga',
   'audio/wav',
   'audio/webm',
